@@ -3,6 +3,7 @@ import face_recognition
 import os
 import time
 import pandas as pd
+import streamlit as st
 # Declaring variables
 path = "db"
 scale = 2
