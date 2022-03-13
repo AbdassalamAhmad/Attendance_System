@@ -1,6 +1,4 @@
 import cv2
-from cv2 import dft
-#import numpy as np
 import face_recognition
 import os
 import time
@@ -16,13 +14,14 @@ def late_penalty(arrive_time):
         penalty = 10
     return penalty
 
-def markattendance(person_name, attendance_file):
+def markattendance(person_name, attendance_file, new_date):
 
     with open(attendance_file.name,'r+') as f:
         lines = f.readlines()
         name_list=[]
         now = time.localtime()
-        date = time.strftime("%Y/%m/%d", now)
+        #date = time.strftime("%Y/%m/%d", now)
+        date = new_date
         for line in lines:
             entry = line.split(',')
             if entry[2] == date:
@@ -52,7 +51,7 @@ def prepare_test_img(test_img):
     return test_img, encoded_tests, face_test_locations
 
 
-def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file):
+def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file, new_date):
     images = os.listdir(path)
     name_indices = []
     names=[]

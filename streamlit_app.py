@@ -38,8 +38,10 @@ def main():
 
             st.title("Here is the picture you've uploded")
             test_img, encoded_tests, face_test_locations = prepare_test_img(uploaded_file)
-            
-            attendance_list, df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
+            now = time.localtime()
+            date = time.strftime("%Y/%m/%d", now)
+            new_date = st.text_input('For Trying purposes you can put any date to test the program', date)
+            attendance_list, df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file, new_date)
             t1 = time.time() - t0
             st.write("Time elapsed: ", t1)
             # test_img = cv2.resize(test_img,(0,0),None,0.50,0.50) 
