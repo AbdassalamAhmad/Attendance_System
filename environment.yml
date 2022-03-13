@@ -3,3 +3,5 @@
  dependencies:
      - dlib
      - opencv
+     - pandas
+     - numpy
