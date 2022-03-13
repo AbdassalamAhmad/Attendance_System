@@ -2,4 +2,4 @@
      - conda-forge
  dependencies:
      - dlib
-     - opencv-python
+     - opencv
