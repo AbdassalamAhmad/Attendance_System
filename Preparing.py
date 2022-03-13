@@ -24,8 +24,9 @@ def markattendance(person_name, attendance_file, new_date):
         date = new_date
         for line in lines:
             entry = line.split(',')
-            if entry[2] == date and len(entry)>1:
-                name_list.append(entry[0])
+            if len(entry)>1:
+                if entry[2] == date:
+                    name_list.append(entry[0])
         if person_name not in name_list:
             arrive_time = time.strftime("%H:%M:%S", now)
             penalty = late_penalty(arrive_time)
