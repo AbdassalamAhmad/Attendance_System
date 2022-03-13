@@ -1,6 +1,4 @@
-name: dlib
-channels:
-  - conda-forge
-dependencies:
-  - streamlit >= 0.73
-  - dlib
+ channels:
+     - conda-forge
+ dependencies:
+     - dlib
