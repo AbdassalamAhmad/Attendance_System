@@ -23,6 +23,7 @@ def markattendance(person_name, attendance_file, new_date):
         date = new_date
         for line in lines:
             entry = line.split(',')
+            print(entry)
             if entry[2] == date:
                 name_list.append(entry[0])
         if person_name not in name_list:
