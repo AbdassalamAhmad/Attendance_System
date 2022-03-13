@@ -77,19 +77,19 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendanc
             f = open(attendance_file.name,'r',encoding = 'utf-8')
             df = pd.read_csv(f)
 
-    attendance_list = [False for i in range(len(results))]
-    for i in name_indices:
-        attendance_list[i] = True
+    # attendance_list = [False for i in range(len(results))]
+    # for i in name_indices:
+    #     attendance_list[i] = True
 
-    for image in images:
-        names.append(image.split(".")[0])
+    # for image in images:
+    #     names.append(image.split(".")[0])
 
-    ans = {}
-    for i, name in enumerate (names):
-        ans[name] = attendance_list[i]
+    # ans = {}
+    # for i, name in enumerate (names):
+    #     ans[name] = attendance_list[i]
 
 
-    return (ans,df)
+    return (df)
 
 
 
