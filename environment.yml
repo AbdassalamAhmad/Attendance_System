@@ -4,3 +4,4 @@
      - dlib
      - pandas
      - numpy
+     - face_recognition
