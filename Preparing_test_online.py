@@ -46,7 +46,7 @@ def prepare_test_img(test_img):
     #test_img = cv2.cvtColor(test_img,cv2.COLOR_BGR2RGB)
     test_img_small = cv2.resize(test_img,(0,0),None,0.5,0.5)
 
-    face_test_locations = face_recognition.face_locations(test_img_small, model = "cnn")
+    face_test_locations = face_recognition.face_locations(test_img_small, model = "hog")
     encoded_tests = face_recognition.face_encodings(test_img_small)
     return test_img, encoded_tests, face_test_locations
 
@@ -56,7 +56,7 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, new_date)
     name_indices = []
 
     for encoded_test, face_test_location in zip(encoded_tests, face_test_locations):
-        results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.5)
+        results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.6)
         tryrhis = face_recognition.face_distance(encoded_trains,encoded_test)
         st.write(tryrhis)
         st.write(images)
