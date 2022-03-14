@@ -46,7 +46,7 @@ def prepare_test_img(test_img):
     #test_img = cv2.cvtColor(test_img,cv2.COLOR_BGR2RGB)
     test_img_small = cv2.resize(test_img,(0,0),None,0.5,0.5)
 
-    face_test_locations = face_recognition.face_locations(test_img_small, model = "hog")
+    face_test_locations = face_recognition.face_locations(test_img_small, model = "cnn")
     encoded_tests = face_recognition.face_encodings(test_img_small)
     return test_img, encoded_tests, face_test_locations
 
