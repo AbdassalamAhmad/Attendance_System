@@ -1,7 +1,7 @@
 import cv2
 import face_recognition
 import os
-import pickle
+#import pickle
 import streamlit as st
 # Declaring variables
 

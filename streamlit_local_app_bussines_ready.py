@@ -1,19 +1,14 @@
-import csv
 import streamlit as st
-from PIL import Image# to read & resize the image 
 
 import time
-import cv2
+#import cv2
 import pickle
 from Preparing_local import prepare_test_img, test
 
 t0= time.time()
 print("Hello")
-
 # Declaring variables
 path = "db"
-
-
 
 
 def main():
@@ -30,6 +25,7 @@ def main():
     st.sidebar.title("What to do")
     app_mode = st.sidebar.selectbox("Choose the app mode",
     ["Attend from image", "Attend using camera", "Training"])
+
 
     if app_mode == "Attend from image":     
         attendance_file = st.file_uploader("Choose attendance file",type =['csv'])
@@ -49,9 +45,6 @@ def main():
             st.image(test_img)
             #st.write(attendance_list)
             st.write(df)
-
-
-
 
 
     elif app_mode == "Attend using camera":
@@ -74,7 +67,6 @@ def main():
         
             #st.write(attendance_list)
             st.write(df)
-
 
 
     elif app_mode == "Training":

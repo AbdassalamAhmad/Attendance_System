@@ -1,7 +1,7 @@
 import streamlit as st
 
 import time
-import cv2
+#import cv2
 import pickle
 from Preparing_test_online import prepare_test_img, test
 
@@ -29,6 +29,7 @@ def main():
     app_mode = st.sidebar.selectbox("Choose the app mode",
     ["Attend from image", "Attend using camera", "Training"])
 
+
     if app_mode == "Attend from image":     
         uploaded_file = st.file_uploader("Upload a picture of a person to make him attend", type=['jpg', 'jpeg', 'png'])
         if uploaded_file is not None:   
@@ -50,9 +51,6 @@ def main():
             st.write(df)
 
 
-
-
-
     elif app_mode == "Attend using camera":
         picture = st.camera_input("Take a picture of yourself to attend")
         if picture is not None:
@@ -67,13 +65,11 @@ def main():
             ############----end trying----------##########
 
             df = test(encoded_tests, face_test_locations, test_img, encoded_trains, new_date)
-
             t1 = time.time() - t0
             st.write("Time elapsed: ", t1)
             st.image(test_img)
 
             st.write(df)
-
 
 
     elif app_mode == "Training":
