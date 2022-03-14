@@ -9,6 +9,7 @@ path = "db"
 
 def training(path):
     images = os.listdir(path)
+
     for image in images:
         train_img = face_recognition.load_image_file(f"db/{image}")
         train_img = cv2.cvtColor(train_img,cv2.COLOR_BGR2RGB)

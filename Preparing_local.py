@@ -14,14 +14,13 @@ def late_penalty(arrive_time):
         penalty = 10
     return penalty
 
-def markattendance(person_name, attendance_file, new_date):
+def markattendance(person_name, attendance_file):
 
     with open(attendance_file.name,'r+') as f:
         lines = f.readlines()
         name_list=[]
         now = time.localtime()
-        #date = time.strftime("%Y/%m/%d", now)
-        date = new_date
+        date = time.strftime("%Y/%m/%d", now)
         for line in lines:
             entry = line.split(',')
             if len(entry)>1:
@@ -52,7 +51,7 @@ def prepare_test_img(test_img):
     return test_img, encoded_tests, face_test_locations
 
 
-def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file, new_date):
+def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file):
     images = os.listdir(path)
     name_indices = []
     names=[]
@@ -70,7 +69,7 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendanc
                     cv2.rectangle(test_img,(top_left),(bottom_right),(255,0,255),2)
                     cv2.rectangle(test_img,(bottom_right),(top_left[0], bottom_right[1]+30),(255,0,255),cv2.FILLED)
                     cv2.putText(test_img,person_name,(top_left[0]+6,bottom_right[1]+25),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1)
-                    df=markattendance(person_name, attendance_file, new_date)
+                    df=markattendance(person_name, attendance_file)
         else:
             top_left, bottom_right = (face_test_location[3]*scale, face_test_location[0]*scale) ,(face_test_location[1]*scale, face_test_location[2]*scale)
             cv2.rectangle(test_img,(top_left),(bottom_right),(255,0,255),2)

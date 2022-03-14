@@ -5,7 +5,7 @@ from PIL import Image# to read & resize the image
 import time
 import cv2
 import pickle
-from Preparing import prepare_test_img, test
+from Preparing_local import prepare_test_img, test
 
 t0= time.time()
 print("Hello")
@@ -38,13 +38,8 @@ def main():
 
             st.title("Here is the picture you've uploded")
             test_img, encoded_tests, face_test_locations = prepare_test_img(uploaded_file)
-            
-            ############----for trying only----------##########
-            now = time.localtime()
-            date = time.strftime("%Y/%m/%d", now)
-            new_date = st.text_input('For Trying purposes you can put any date to test the program', date)
-            ############----end trying----------##########
-            df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file, new_date)
+
+            df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
             t1 = time.time() - t0
             st.write("Time elapsed: ", t1)
             # test_img = cv2.resize(test_img,(0,0),None,0.50,0.50) 
