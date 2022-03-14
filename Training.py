@@ -16,7 +16,6 @@ def training(path):
         train_img = cv2.cvtColor(train_img,cv2.COLOR_BGR2RGB)
         # cv2.imshow('Train',train_img)
         # cv2.waitKey(0)
-        st.write(image)
         encoded_trains.append(face_recognition.face_encodings(train_img)[0])
     return encoded_trains, images
 

@@ -18,7 +18,7 @@ path = "db"
 
 def main():
     # Loading the mode
-    @st.cache
+    #@st.cache
     def load_model():
         with open ('encoded_faces.pickle', 'rb') as f_in:
             encoded_trains = pickle.load(f_in)
@@ -38,7 +38,8 @@ def main():
 
             st.title("Here is the picture you've uploded")
             test_img, encoded_tests, face_test_locations = prepare_test_img(uploaded_file)
-
+            #encoded_trains = load_model()
+            st.write(len(encoded_trains))
             df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
             t1 = time.time() - t0
             st.write("Time elapsed: ", t1)
@@ -62,7 +63,7 @@ def main():
 
             test_img, encoded_tests, face_test_locations = prepare_test_img(picture)
 
-            attendance_list, df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
+            df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
 
             t1 = time.time() - t0
             st.write("Time elapsed: ", t1)
@@ -82,10 +83,14 @@ def main():
         st.markdown('2. Put all the photos in the **db** folder')
         st.markdown("3. Press **Train The Model** Button")
         if st.button("Train The Model"):
-            from Training import training
-            encoded_trains = training(path)
-
-
+            import Training
+            encoded_trains, images = Training.training(path)
+            st.write(images)
+            st.write(len(encoded_trains))
+            output_file = 'encoded_faces.pickle'
+            with open(output_file, 'wb') as f_out:
+                pickle.dump(encoded_trains, f_out)
+            
 #error handler
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 

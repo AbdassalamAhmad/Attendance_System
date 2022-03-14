@@ -16,7 +16,7 @@ path = "db"
 
 def main():
     # Loading the mode
-    @st.cache
+    #@st.cache
     def load_model():
         with open ('encoded_faces.pickle', 'rb') as f_in:
             encoded_trains = pickle.load(f_in)
