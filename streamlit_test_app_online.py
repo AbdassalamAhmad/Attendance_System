@@ -85,6 +85,7 @@ def main():
             import Training
             encoded_trains, images = Training.training(path)
             st.write(images)
+            st.write(len(encoded_trains))
             output_file = 'encoded_faces.pickle'
             with open(output_file, 'wb') as f_out:
                 pickle.dump(encoded_trains, f_out)
