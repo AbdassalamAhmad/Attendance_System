@@ -3,6 +3,7 @@ import face_recognition
 import os
 import time
 import pandas as pd
+import numpy as np
 import streamlit as st
 # Declaring variables
 path = "db"
@@ -57,10 +58,9 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendanc
     # names=[]
     df =1
     for encoded_test, face_test_location in zip(encoded_tests, face_test_locations):
-        results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.5)
-        tryrhis = face_recognition.face_distance(encoded_trains,encoded_test)
-        st.write(tryrhis)
-        st.write(images)
+        results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.49)
+        trythis = face_recognition.face_distance(encoded_trains,encoded_test)
+        st.write(min(trythis))
         if True in results:
             name_index = results.index(True)
             name_indices.append(name_index)
