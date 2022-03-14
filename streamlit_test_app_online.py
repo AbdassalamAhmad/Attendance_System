@@ -82,10 +82,12 @@ def main():
         st.markdown('2. Put all the photos in the **db** folder')
         st.markdown("3. Press **Train The Model** Button")
         if st.button("Train The Model"):
-            from Training import training
-            encoded_trains, images = training(path)
+            import Training
+            encoded_trains, images = Training.training(path)
             st.write(images)
-
+            output_file = 'encoded_faces.pickle'
+            with open(output_file, 'wb') as f_out:
+                pickle.dump(encoded_trains, f_out)
 
 
 if __name__=='__main__':
