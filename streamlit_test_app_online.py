@@ -83,7 +83,8 @@ def main():
         st.markdown("3. Press **Train The Model** Button")
         if st.button("Train The Model"):
             from Training import training
-            encoded_trains = training(path)
+            encoded_trains, images = training(path)
+            st.write(images)
 
 
 
