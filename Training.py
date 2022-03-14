@@ -2,13 +2,14 @@ import cv2
 import face_recognition
 import os
 import pickle
-
+import streamlit as st
 # Declaring variables
 
 path = "db"
 
 def training(path):
     images = os.listdir(path)
+    st.write(images)
     encoded_trains =[]
     for image in images:
         train_img = face_recognition.load_image_file(f"db/{image}")
