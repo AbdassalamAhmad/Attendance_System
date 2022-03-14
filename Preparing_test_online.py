@@ -57,7 +57,8 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, new_date)
 
     for encoded_test, face_test_location in zip(encoded_tests, face_test_locations):
         results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.5)
-
+        tryrhis = face_recognition.face_distance(encoded_trains,encoded_test)
+        st.write(tryrhis)
         if True in results:
             name_index = results.index(True)
             name_indices.append(name_index)
