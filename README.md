@@ -8,9 +8,7 @@ https://user-images.githubusercontent.com/83673888/158333701-9f2cffd8-cd91-496b-
 
 
 ## How To Try This Model
-There are two versions (Online and Offline)
-1. Online Version: <br>**you can try it from [here](https://share.streamlit.io/abdassalamahmad/attendance_system/main/streamlit_test_app_online.py)**
-In this version you can only attend from 
+There are two versions (Online and Offline) 
 
 |                                 | Online                                         | Offline     |
 | --------------------------------| :--------------------------------------------: | :------------------------------------------------------------: |
@@ -19,9 +17,22 @@ In this version you can only attend from
 | Attend from Camera (Photo Mode) | <li>- [x] </li>                                | <li>- [x] </li>                                                |
 | Attend Live                     | <li>- [ ] </li>                                | <li>- [x] </li>                                                |
 
++ **Online Version:** <br>you can try it from [here](https://share.streamlit.io/abdassalamahmad/attendance_system/main/streamlit_test_app_online.py)
++ **Offline Version:** to try it follow these steps:
+  <li>. sdf
+  <li>. sdf
+  <li>. s
 
-
-
+<ol>
+  <li>Coffee</li>
+  <li>Tea
+    <ol>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ol>
+  </li>
+  <li>Milk</li>
+</ol>
 
 
 
