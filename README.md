@@ -1,6 +1,6 @@
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/abdassalamahmad/attendance_system/main/streamlit_test_app_online.py)
-# Attendance-System-Real-Time
-Attendance System using Face Recognition (HOG) Real-Time
+# Attendance-System Using Face-Recognition in Real-Time
+Attendance System using Face Recognition (HOG) in Real-Time
 
 ## Model Demo
 
@@ -52,7 +52,7 @@ You have three modes. The best one is **Live Attendance** (Real case scenario)<b
 To run it do the following:
 1. From the sidebar select `Attend Live` mode.
 2. Select `Attendance.csv` file, which is a file to record the arrival_time, date, penalty of every attendant.
-3. Check `run` box to start the program the show faces of people you trained (people in `db` folder)
+3. Check `run` box to start the program then show the camera faces of people you've trained (people in `db` folder)
 
 
 
