@@ -11,7 +11,7 @@ path = "db"
 
 
 def main():
-    # Loading the mode
+    # Loading the model
     #@st.cache
     def load_model():
         with open ('encoded_faces.pickle', 'rb') as f_in:
@@ -23,7 +23,7 @@ def main():
     st.title("Attendance_Project")
     st.sidebar.title("What to do")
     app_mode = st.sidebar.selectbox("Choose the app mode",
-    ["Attend from uploading image", "Attend using camera(photo mode)", "Training"])
+    ["Attend from uploading image", "Attend using camera (photo mode)", "Training"])
 
 
     if app_mode == "Attend from uploading image":     
@@ -45,7 +45,7 @@ def main():
             st.write(df)
 
 
-    elif app_mode == "Attend using camera(photo mode)":
+    elif app_mode == "Attend using camera (photo mode)":
         picture = st.camera_input("Take a picture of yourself to attend")
         if picture is not None:
 

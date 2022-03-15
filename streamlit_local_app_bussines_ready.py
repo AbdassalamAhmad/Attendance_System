@@ -1,5 +1,4 @@
 import streamlit as st
-
 import time
 import cv2
 import pickle
@@ -33,18 +32,13 @@ def main():
         uploaded_file = st.file_uploader("Upload a picture of a person to make him attend", type=['jpg', 'jpeg', 'png'])
         if attendance_file is not None and uploaded_file is not None:   
 
-            st.title("Here is the picture you've uploded")
             test_img, encoded_tests, face_test_locations = prepare_test_img(uploaded_file)
-            #encoded_trains = load_model()
-            st.write(len(encoded_trains))
             df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
             t1 = time.time() - t0
+
             st.write("Time elapsed: ", t1)
             # test_img = cv2.resize(test_img,(0,0),None,0.50,0.50) 
-            # cv2.imshow('Test',test_img)
-            # cv2.waitKey(0)
             st.image(test_img)
-            #st.write(attendance_list)
             st.write(df)
 
 
@@ -52,21 +46,14 @@ def main():
         attendance_file = st.file_uploader("Choose attendance file",type =['csv'])
         picture = st.camera_input("Take a picture")
         if picture is not None and attendance_file is not None:
-            st.title("Here is the picture you've taken")
-            #img = Image.open(picture)
 
             test_img, encoded_tests, face_test_locations = prepare_test_img(picture)
-
             df = test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file)
-
             t1 = time.time() - t0
+
             st.write("Time elapsed: ", t1)
             #test_img = cv2.resize(test_img,(0,0),None,0.50,0.50) 
             st.image(test_img)
-            #cv2.imshow('Test',test_img)
-            #cv2.waitKey(0)
-        
-            #st.write(attendance_list)
             st.write(df)
 
 
@@ -75,12 +62,14 @@ def main():
         st.markdown("1. Get a photo of every employee with **only one face** in the picture.")
         st.markdown('2. Put all the photos in the **db** folder')
         st.markdown("3. Press **Train The Model** Button")
+
         if st.button("Train The Model"):
             import Training
             encoded_trains, images = Training.training(path)
             st.write(images)
             st.write(len(encoded_trains))
             output_file = 'encoded_faces.pickle'
+
             with open(output_file, 'wb') as f_out:
                 pickle.dump(encoded_trains, f_out)
             
@@ -88,14 +77,15 @@ def main():
     elif app_mode == "Attend Live":
         st.title("Webcam Live Feed")
         attendance_file = st.file_uploader("Choose attendance file",type =['csv'])
+
         if attendance_file is not None:
             run = st.checkbox('Run')
             FRAME_WINDOW = st.image([])
             camera = cv2.VideoCapture(0)
+
             while run:
                 _, test_img = camera.read()
                 test_img = cv2.cvtColor(test_img, cv2.COLOR_BGR2RGB)
-                #FRAME_WINDOW.image(frame)
                 test_img_small = cv2.resize(test_img,(0,0),None,0.5,0.5)
 
                 face_test_locations = face_recognition.face_locations(test_img_small, model = "hog")
