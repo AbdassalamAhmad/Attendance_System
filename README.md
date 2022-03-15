@@ -1,2 +1,2 @@
-# Attendance_System
-Attendance System using Face Recognition (HOG)
+# Attendance-System-Real-Time
+Attendance System using Face Recognition (HOG) Real-Time
