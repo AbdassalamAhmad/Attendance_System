@@ -28,7 +28,7 @@ def markattendance(person_name, new_date):
             if len(entry)>1:
                 if entry[2] == date:
                     name_list.append(entry[0])
-                    
+
         if person_name not in name_list:
             arrive_time = time.strftime("%H:%M:%S", now)
             penalty = late_penalty(arrive_time)
@@ -55,9 +55,9 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, new_date)
 
     for encoded_test, face_test_location in zip(encoded_tests, face_test_locations):
         results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.5)
-        # tryrhis = face_recognition.face_distance(encoded_trains,encoded_test)
-        # st.write(tryrhis)
-        # st.write(images)
+        tryrhis = face_recognition.face_distance(encoded_trains,encoded_test)
+        st.write(tryrhis)
+        st.write(images)
         if True in results:
             name_index = results.index(True)
             name_indices.append(name_index)
