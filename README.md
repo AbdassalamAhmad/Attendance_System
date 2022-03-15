@@ -19,20 +19,25 @@ There are two versions (Online and Offline)
 
 + **Online Version:** <br>you can try it from [here](https://share.streamlit.io/abdassalamahmad/attendance_system/main/streamlit_test_app_online.py)
 + **Offline Version:** to try it follow these steps:
-  <li>. sdf
-  <li>. sdf
-  <li>. s
-
-<ol>
-  <li>Coffee</li>
-  <li>Tea
-    <ol>
-      <li>Black tea</li>
-      <li>Green tea</li>
-    </ol>
-  </li>
-  <li>Milk</li>
-</ol>
+1. Clone this repo to get all the code and pre-trained model(pickle_file).
+2. Change current directory into the cloned repo folder.
+3. Install all of the libraries from [environment.yml](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/environment.yml) file by using these commands.
+```
+conda env create -f environment.yml
+conda activate attendance
+```
+(optional step) to check if all libraries installed
+```
+conda env list
+```
+4. Install all of the dependencies from [packages.txt](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/packages.txt) using this command.
+  * **Linux users**
+```
+sudo apt-get install cmake libgtk-3-dev freeglut3-dev
+```
+  * **Windows users**
+- You need to install 
+5. Run this command to try the offline version 
 
 
 
