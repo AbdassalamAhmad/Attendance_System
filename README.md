@@ -50,15 +50,26 @@ To train the model on different faces, do the following:
 
 Testing :
 ---------
-You have three modes. The best one is **Live Attendance** (Real case scenario)<br>
+- You have three modes. The best one is **Live Attendance** (Real case scenario)<br>
 To run it do the following:
 1. From the sidebar select `Attend Live` mode.
 2. Select `Attendance.csv` file, which is a file to record the arrival_time, date, penalty of every attendant.
 3. Check `run` box to start the program then show the camera faces of people you've trained (people in `db` folder)
 
+- You can also try attending from uploading a picture of your face and it will work as well.
+To run it do the following:
+1. From the sidebar select `Attend from uploading image` mode.
+2. Upload your image or drag & drop it and it will detect your face and make you attend **just like this picture**.
+![image](https://user-images.githubusercontent.com/83673888/158464863-65775d07-0023-4e7e-b15a-f2a09052af35.png)
+Note: Of course this is for trying purposes the best model is `Attend Live` described above.
+
 ## Short Description of the Files
 1. [Preparing_local.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Preparing_local.py): It has all of the functions necessary for the main offline version script to work
-2. [](): very similar file to 
+2. [Preparing_test_online.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Preparing_test_online.py): very similar file to the previous file with only some changes to make the online version work properly.
+3. [Training.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Training.py): a script for training the model to memorize faces stored in `db` folder.
+4. [encoded_faces.pickle](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/encoded_faces.pickle): The output file of `Training.py` script, It contains the encoded features of every face to compare it with new faces.
+5. [environment.yml](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/environment.yml) and [packages.txt](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/packages.txt) : libraries and dependencies to make this project work.
+6. [streamlit_local_app_bussines_ready.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/streamlit_local_app_bussines_ready.py): 
 
 
 
