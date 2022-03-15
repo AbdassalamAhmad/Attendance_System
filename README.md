@@ -88,7 +88,7 @@ I have used these resources to build my project:
 I changed the logic and make it work **forever**.<br>
 I've aslo added the penalty feature for people who are late to work, (they get a 10$ penalty if they came after 9:00 AM).
 
-If you like this project, I appreciate you starring this repo.
+If you like this project, I appreciate you starring this repo.<br>
 Please feel free to fork the content and contact me on my [LinkedIn account](https://www.linkedin.com/in/abdassalam-ahmad/) if you have any questions.
 
 
