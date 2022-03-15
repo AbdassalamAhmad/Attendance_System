@@ -54,7 +54,7 @@ def test(encoded_tests, face_test_locations, test_img, encoded_trains, new_date)
     name_indices = []
 
     for encoded_test, face_test_location in zip(encoded_tests, face_test_locations):
-        results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.5)
+        results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.6)
         tryrhis = face_recognition.face_distance(encoded_trains,encoded_test)
         st.write(tryrhis)
         st.write(images)
