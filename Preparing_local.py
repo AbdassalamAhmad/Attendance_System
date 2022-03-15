@@ -52,7 +52,7 @@ def prepare_test_img(test_img):
 def test(encoded_tests, face_test_locations, test_img, encoded_trains, attendance_file):
     images = os.listdir(path)
     name_indices = []
-    df =1
+    df ="No Faces Found"
 
     for encoded_test, face_test_location in zip(encoded_tests, face_test_locations):
         results = face_recognition.compare_faces(encoded_trains,encoded_test,tolerance=0.49)
