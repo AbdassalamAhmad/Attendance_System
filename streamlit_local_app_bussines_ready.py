@@ -6,7 +6,7 @@ import face_recognition
 from Preparing_local import prepare_test_img, test
 
 t0= time.time()
-print("Hello")
+# print("Hello")
 # Declaring variables
 path = "db"
 
