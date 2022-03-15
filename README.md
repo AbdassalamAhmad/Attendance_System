@@ -80,13 +80,13 @@ Note: Of course this is for trying purposes the best model is `Attend Live` desc
 5. Make the attendance :- `markattendance()` this fuction uses OpenCV library to annotate the faces and then add the name each detected face -based on the previous function return `face_recognition.compare_faces`- to the attendance list [Attendance.csv](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Attendance.csv).
 
 
-
-
-
-
-
-
-
+## Resources and Note
+I have used these resources to build my project:
+1. [medium article](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78): -  It descripe in details how **face recognition** is really working under the hood.
+2. [YouTube Tutorial](https://www.youtube.com/watch?v=sz25xxF_AVE): - **for attendance part** using OpenCV and HOG. It is basically based on the previous article.
+3. I've written the code myself based on the video and enhanced some features like when attending live it was mainly designed to be used for **one day only.**<br>
+I changed the logic and make it work **forever**.<br>
+I've aslo added the penalty feature for people who are late to work, (they get a 10$ penalty if they came after 9:00 AM)
 
 
 ## To-Do List
