@@ -1,3 +1,4 @@
+ name: attendance
  channels:
      - conda-forge
  dependencies:
