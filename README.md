@@ -64,12 +64,22 @@ To run it do the following:
 Note: Of course this is for trying purposes the best model is `Attend Live` described above.
 
 ## Short Description of the Files
-1. [Preparing_local.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Preparing_local.py): It has all of the functions necessary for the main offline version script to work
+1. [Preparing_local.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Preparing_local.py): It has all of the functions necessary for the main offline version script to work.
 2. [Preparing_test_online.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Preparing_test_online.py): very similar file to the previous file with only some changes to make the online version work properly.
 3. [Training.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Training.py): a script for training the model to memorize faces stored in `db` folder.
 4. [encoded_faces.pickle](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/encoded_faces.pickle): The output file of `Training.py` script, It contains the encoded features of every face to compare it with new faces.
 5. [environment.yml](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/environment.yml) and [packages.txt](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/packages.txt) : libraries and dependencies to make this project work.
-6. [streamlit_local_app_bussines_ready.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/streamlit_local_app_bussines_ready.py): 
+6. [streamlit_local_app_bussines_ready.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/streamlit_local_app_bussines_ready.py): Attend live or from uploading photo or take a photo then attend.
+7. [streamlit_test_app_online.py](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/streamlit_test_app_online.py): very similar file to the previous script but without the **Live Attendance Feature** and it works online right from this [link](https://share.streamlit.io/abdassalamahmad/attendance_system/main/streamlit_test_app_online.py).
+
+## How This Model Work (what is going on under the hood)
+1. Detecting all of the faces in the picture/video:- using HOG algorithm. This function do the work `face_recognition.face_locations`.
+2. Transform the face to make the eyes and mouth centered after finding main face landmarks using face landmark estimation.
+3. Encode the faces by generating 128 different measuremts per face (saving faces). This function do the training (encodings) `face_recognition.face_encodings`
+4. Recognition:- comparing new faces from photo/video with the encoded faces in our dataset. This function `face_recognition.compare_faces` do the comparing and return a list of True and False.
+5. Make the attendance :- `markattendance()` this fuction uses OpenCV library to annotate the faces and then add the name each detected face -based on the previous function return `face_recognition.compare_faces`- to the attendance list [Attendance.csv](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Attendance.csv).
+
+
 
 
 
