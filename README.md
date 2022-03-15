@@ -90,6 +90,7 @@ I've aslo added the penalty feature for people who are late to work, (they get a
 <br>
 If you like this project, I appreciate you starring this repo.<br>
 Please feel free to fork the content and contact me on my [LinkedIn account](https://www.linkedin.com/in/abdassalam-ahmad/) if you have any questions.
+
 ## To-Do List
 - [x] Penalty (10$) for comming late to work (After 9:00 AM).
 - [ ] Detect 3D faces only. (printed faces or rendered faces on screens shouldn't be detected).
