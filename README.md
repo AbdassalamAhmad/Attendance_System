@@ -89,7 +89,7 @@ I changed the logic and make it work **forever**.<br>
 I've aslo added the penalty feature for people who are late to work, (they get a 10$ penalty if they came after 9:00 AM).
 <br>
 If you like this project, I appreciate you starring this repo.<br>
-Please feel free to fork the content and contact me on my [LinkedIn account](https://www.linkedin.com/in/abdassalam-ahmad/) if you have any questions.
+Please feel free to fork the content and contact me on my [LinkedIn account](https://www.youtube.com/watch?v=sz25xxF_AVE) if you have any questions.
 
 ## To-Do List
 - [x] Penalty (10$) for comming late to work (After 9:00 AM).
