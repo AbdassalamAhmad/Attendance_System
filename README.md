@@ -77,7 +77,7 @@ Note: Of course this is for trying purposes the best model is `Attend Live` desc
 2. Transform the face to make the eyes and mouth centered after finding main face landmarks using face landmark estimation.
 3. Encode the faces by generating 128 different measuremts per face (saving faces). This function do the training (encodings) `face_recognition.face_encodings`
 4. Recognition:- comparing new faces from photo/video with the encoded faces in our dataset. This function `face_recognition.compare_faces` do the comparing and return a list of True and False.
-5. Make the attendance :- `markattendance()` this fuction uses OpenCV library to annotate the faces and then add the name each detected face -based on the previous function return `face_recognition.compare_faces`- to the attendance list [Attendance.csv](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Attendance.csv).
+5. Make the attendance :- `markattendance()` this function uses OpenCV library to annotate the faces and then add the name each detected face -based on the previous function return `face_recognition.compare_faces`- to the attendance list [Attendance.csv](https://github.com/AbdassalamAhmad/Attendance_System/blob/main/Attendance.csv).
 
 
 ## Resources and Note
