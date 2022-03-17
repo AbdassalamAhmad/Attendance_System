@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 import pickle
+import os
 from Preparing_test_online import prepare_test_img, test
 
 t0= time.time()
@@ -8,7 +9,7 @@ t0= time.time()
 
 # Declaring variables
 path = "db"
-
+test_path = "test pictures"
 
 def main():
     # Loading the model
@@ -23,10 +24,36 @@ def main():
     st.title("Attendance_Project")
     st.sidebar.title("What to do")
     app_mode = st.sidebar.selectbox("Choose the app mode",
-    ["Attend from uploading image", "Attend using camera (photo mode)", "Training"])
+    ["Demo app", "Attend from uploading image", "Attend using camera (photo mode)", "Training"])
 
+    if app_mode == "Demo app":
+        st.sidebar.write(" ------ ")
+        photos = []
+        images = os.listdir(test_path)
 
-    if app_mode == "Attend from uploading image":     
+        for image in images:
+            filepath = os.path.join(test_path, image)
+            photos.append(image)
+        
+        option = st.sidebar.selectbox('Please select a sample image, then click Attend button', photos)
+        pressed = st.sidebar.button('Attend')
+
+        if pressed:
+            st.sidebar.write('Please wait for the magic to happen!')
+            pic = os.path.join(test_path, option)
+            test_img, encoded_tests, face_test_locations = prepare_test_img(pic)
+
+            ############----for trying only----------##########
+            now = time.localtime()
+            date = time.strftime("%Y/%m/%d", now)
+            new_date = st.text_input('For Trying purposes you can put any date to test the program', date)
+            ############----end trying----------##########
+
+            df = test(encoded_tests, face_test_locations, test_img, encoded_trains, new_date)
+            st.image(test_img)
+            st.write(df)
+
+    elif app_mode == "Attend from uploading image":     
         uploaded_file = st.file_uploader("Upload a picture of a person to make him attend", type=['jpg', 'jpeg', 'png'])
         if uploaded_file is not None:   
 
